@@ -1,0 +1,100 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+* NOTE for my self
+
+	Well, data scientist, more than just math and technical things, they are also artists who can describe, analyze and evaluate the data and its connection among others!
+	* RESPECT! *
+
+	
+* Further learning:
+	- When to use which (classification problems)
+		* https://scikit-learn.org/stable/unsupervised_learning.html 
+	- Param of each model
+	- Bootstrapping (forest)
+	- Manifold learning - in generalization / dimension reduction
+		* https://towardsdatascience.com/manifolds-in-data-science-a-brief-overview-2e9dde9437e5#:~:text=Manifolds%20are%20the%20fundamental%20surfaces,predictions%20about%20the%20remaining%20space.
+	
+
+* Check it out 
+- StatQuest --> https://www.youtube.com/watch?v=Gv9_4yMHFhI&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF
+
+- kernel?
+- how random is run
+- hyperparam tuning strag
+- why in errors_vs_complex, train drop but val plateau
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------		
+
+#################################################################################################################
+2. Logistic regression ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#################################################################################################################
+
+- sklearn.linear_model.LogisticRegression --> lots of terms here
+- https://www.youtube.com/watch?v=-la3q9d7AKQ&list=PLNeKWBMsAzboR8vvhnlanxCNr2V7ITuxy&index=2 - playlist
+- Preprocessing --> scaler; encoder https://scikit-learn.org/stable/modules/preprocessing.html#standardization-or-mean-removal-and-variance-scaling 
+- Evaluate --> confusion matrix --> type I and II error ???
+
+- FUTURE PROJECT: https://www.kaggle.com/c/digit-recognizer
+
+
+Error to keep in mind:
+* DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+
+#################################################################################################################
+3. Decision trees ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#################################################################################################################
+
+- "overfitting"
+- sklearn.tree
+	* gini - https://www.youtube.com/watch?v=-W0DnxQK1Eo
+	* plot_tree - majority class for classification, extremity of values for regression, or purity of node for multi-output
+	* value: number of item in each "class" --> sum = "sample"
+	* target value <--> "class"
+	
+- TreeClassifier: other para
+	* criterion{“gini”, “entropy”, “log_loss”}
+	* splitter{“best”, “random”}
+	* class_weight 	
+	* ccp_alpha --> other strag (adv & less common): Minimal Cost-Complexity Pruning https://scikit-learn.org/stable/auto_examples/tree/plot_cost_complexity_pruning.html
+
+
+https://scikit-learn.org/stable/auto_examples/tree/plot_unveil_tree_structure.html#sphx-glr-auto-examples-tree-plot-unveil-tree-structure-py
++ node purity: based on the fraction of the data elements
++ entropy: related to randomness in the information being processed in your machine learning project.
++ hyperparameter: max_depth, max_leaf_nodes --> config manually
+	* bootstrap - https://towardsdatascience.com/what-is-out-of-bag-oob-score-in-random-forest-a7fa23d710; https://machinelearningmastery.com/a-gentle-introduction-to-the-bootstrap-method/#:~:text=The%20bootstrap%20method%20is%20a%20statistical%20technique%20for%20estimating%20quantities,after%20they%20have%20been%20chosen.
+	
+	
+
+#################################################################################################################
+4. Gradient boosting GBMs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#################################################################################################################
+
+- XG boost: https://xgboost.readthedocs.io/en/latest/
+
+- K Fold Cross Validation https://vitalflux.com/k-fold-cross-validation-python-example/
+	* Why:
+		* Train-Test split --> data can be leaked thru
+		* Train-Val-Test --> Less samples being learnt & less generalized
+	* Benefit:
+		* Split into training folds with spec.hyperparam, then compute model perf
+		* Repeat till each fold being a val once
+		* Compute + Get optimal param --> finalized one
+	--> resampling technique without replacement
+	--> lower-variance estimate of the model perf
+	
+- Use Label encoder for Multi-class classification 
+
+*** Extra from other on Kaggle:
+	* ECDF: empirical cumulative distribution function
+	
+#################################################################################################################
+5. Unsupervised learning ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#################################################################################################################
+- Using Scikit: https://scikit-learn.org/stable/modules/clustering.html
+
+- t-SNE: https://www.youtube.com/watch?v=NEaUSP4YerM&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=39
+
+- Check downloaded notebooks
+
+	
+		
